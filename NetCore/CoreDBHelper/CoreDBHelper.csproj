@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors></Authors>
+    <Description></Description>
+    <PackageProjectUrl></PackageProjectUrl>
+    <NeutralLanguage></NeutralLanguage>
+    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <PackageReleaseNotes>增加批量插入的支持</PackageReleaseNotes>
+    <Company />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\GitHub\panyoujin\DBHelper\DBHelper\NetCore\CoreDBHelper\CoreDBHelper.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.5" />
+    <PackageReference Include="MySql.Data" Version="6.10.7" />
+  </ItemGroup>
+
+</Project>

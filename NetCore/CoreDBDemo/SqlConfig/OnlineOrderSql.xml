@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SqlSetting>
+  <Data name="OnlineOrder_GetAll">
+    <SqlDefinition type="MySql" ConnStringName="mysqlConnect">
+      <SqlCommand>
+        <![CDATA[
+      SELECT * FROM `online_order` where 1=1  <%= AND STATUS=@@Status@@ %>;
+      ]]>
+      </SqlCommand>
+    </SqlDefinition>
+  </Data>
+
+  <Data name="OnlineOrder_GetOrderList_By_Page">
+    <SqlDefinition type="MySql" ConnStringName="mysqlConnect">
+      <SqlCommand>
+        <![CDATA[
+        SELECT * FROM online_order AS oo WHERE 1=1 <%= AND oo.STATUS=@@Status@@ %> <R%= AND oo.order_no LIKE '%@@OrderNo@@%'%R> <R%= AND oo.pay_type IN (@@PickUp@@)%R> ORDER BY oo.created_date asc LIMIT <R%= @@StartIndex@@, @@SelectCount@@ %R> ;
+        SELECT COUNT(0) AS row_count FROM online_order AS oo WHERE 1=1 <%= AND oo.STATUS=@@Status@@%> <R%= AND oo.order_no LIKE '%@@OrderNo@@%'%R> <R%= AND oo.pay_type IN (@@PickUp@@)%R>;
+      ]]>
+      </SqlCommand>
+    </SqlDefinition>
+  </Data>
+</SqlSetting>
